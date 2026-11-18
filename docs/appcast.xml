@@ -25,13 +25,6 @@
 </body></html>
 ]]></description>
             <enclosure url="https://github.com/TKBlabs/TKBplorer/releases/download/v1.0.37/TKBplorer_1.0.37.dmg" length="4951816" type="application/octet-stream" sparkle:edSignature="GLjqWyMILJKd+f5es81/RHnV1b3l44/RP4FDe+RMC25rG9NtqRG46xZ4nl2P1fliMeWET/C9xAhJbrnYEcKbDQ=="/>
-            <sparkle:deltas>
-                <enclosure url="https://github.com/TKBlabs/TKBplorer/releases/download/v1.0.37/TKBplorer37-36.delta" sparkle:deltaFrom="36" length="1108602" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="g58XuTh7XUzRmlLi1THfZk+Cq6tFhfSZ+yV4qwb1Ybvqw3zqikBLC3iXQPdETQF1QeUvT77g30YGFjV5c45JBQ=="/>
-                <enclosure url="https://github.com/TKBlabs/TKBplorer/releases/download/v1.0.37/TKBplorer37-35.delta" sparkle:deltaFrom="35" length="1167882" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="ewCQlRlityvMELRzkUkPYsEkGgfGH2ncXofCaseT985rE1Ip/6YYubSoBag1WOT84U7piTmyoxH85o1NVx9KBw=="/>
-                <enclosure url="https://github.com/TKBlabs/TKBplorer/releases/download/v1.0.37/TKBplorer37-34.delta" sparkle:deltaFrom="34" length="1212074" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="PV2I3dRkDnzkQk/llkbTpYJ7HefartadRzkVymAexnQaeJVrjliHNFI41x2EiVoI8XKGyvgo3QxP0RLaSDmVAQ=="/>
-                <enclosure url="https://github.com/TKBlabs/TKBplorer/releases/download/v1.0.37/TKBplorer37-33.delta" sparkle:deltaFrom="33" length="1224218" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="v80Zaq7uhjFoXcUDcbERlwxP5MT0krUGE9xFacjNlsCWP+X630DvEfN56EXWuW8vPDTt/mxzzH41x98gZc9VCA=="/>
-                <enclosure url="https://github.com/TKBlabs/TKBplorer/releases/download/v1.0.37/TKBplorer37-32.delta" sparkle:deltaFrom="32" length="1252890" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="WuFBc/jVQPreQJSHnwyS1sUb2pr3BEb6ZR4jO9n0POD9Hys8Ha5RDJxkSJdZtGJ8uXd7/CLqStIDI5FOzAT4BQ=="/>
-            </sparkle:deltas>
         </item>
     </channel>
 </rss>
