@@ -28,8 +28,8 @@
   "description": "TKBplorerは、タブ、複数ペイン、プレビュー、タグ、ネットワーク共有に対応したApple Silicon向けmacOSファイル管理アプリです。",
   "applicationCategory": "UtilitiesApplication",
   "operatingSystem": "macOS Tahoe 26.5以降",
-  "softwareVersion": "1.0.37",
-  "downloadUrl": "https://github.com/TKBlabs/TKBplorer/releases/download/v1.0.37/TKBplorer_1.0.37.dmg",
+  "softwareVersion": "1.1.0",
+  "downloadUrl": "https://github.com/TKBlabs/TKBplorer/releases/download/v1.1.0/TKBplorer_1.1.0.dmg",
   "image": "https://tkbtk.com/assets/icons/tkbplorer.png",
   "author": { "@type": "Organization", "name": "TKB Labs", "url": "https://tkbtk.com/" },
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
@@ -269,7 +269,7 @@ body{
         <h1>TKBplorer</h1>
         <p class="tagline">タブと複数ペインで、コピー、整理、検索、プレビューまでを一つの画面で進めるファイル管理アプリ。</p>
         <div class="cta-row">
-          <a class="btn btn-primary" style="background:var(--blue);" href="https://github.com/TKBlabs/TKBplorer/releases/download/v1.0.37/TKBplorer_1.0.37.dmg" data-download-key="tkbplorer">↓ DMGをダウンロード（v1.0.37）</a>
+          <a class="btn btn-primary" style="background:var(--blue);" href="https://github.com/TKBlabs/TKBplorer/releases/download/v1.1.0/TKBplorer_1.1.0.dmg" data-download-key="tkbplorer">↓ DMGをダウンロード（v1.1.0）</a>
           <a class="btn btn-ghost" href="#readme">README を見る</a>
         </div>
         <p class="download-counter" data-download-count="tkbplorer">累計ダウンロード: 集計中...</p>
@@ -363,12 +363,23 @@ body{
         <h2 class="section-title">リリースノート</h2>
         <span class="section-tag">// changelog · 最新10件</span>
       </div>
-                              <div class="changelog">
+                                    <div class="changelog">
+        <div class="release">
+          <div class="release-meta">
+            <div class="release-version">v1.1.0</div>
+            <div class="release-date">2026-11-18 · ビルド38</div>
+            <span class="release-latest">最新版</span>
+          </div>
+          <div class="change-list">
+            <div class="change"><span class="tag improved">IMPROVED</span>配布形式をZIPからDMGに変更しました。DMGを開いて、TKBplorer.appを「アプリケーション」フォルダへドラッグしてください</div>
+            <div class="change"><span class="tag improved">IMPROVED</span>配布元をGitHub（TKBlabs/TKBplorer）に移し、製品ページを apps.tkbtk.com に移しました。自動アップデートはこれまでどおり使えます</div>
+          </div>
+        </div>
+
         <div class="release">
           <div class="release-meta">
             <div class="release-version">v1.0.37</div>
             <div class="release-date">2026-11-12 · ビルド37</div>
-            <span class="release-latest">最新版</span>
           </div>
           <div class="change-list">
             <div class="change"><span class="tag fixed">FIX</span>ネットワーク共有が接続されていないとき、その共有のフォルダだけを開いていたワークスペースへ切り替えられなかった問題を修正しました。見つからない場所のタブもそのまま開き、共有を接続してから読み直せます。一部のタブが見つからないまま切り替えると、そのタブが消えてしまう問題も直しました</div>
@@ -464,20 +475,6 @@ body{
           </div>
           <div class="change-list">
             <div class="change"><span class="tag fixed">FIX</span>ダウンロードしたアプリが「マルウェアが含まれている」と表示されて起動できないことがある問題を修正しました</div>
-          </div>
-        </div>
-
-        <div class="release">
-          <div class="release-meta">
-            <div class="release-version">v1.0.28</div>
-            <div class="release-date">2026-09-23 · ビルド28</div>
-          </div>
-          <div class="change-list">
-            <div class="change"><span class="tag fixed">FIX</span>OneDrive（Library/CloudStorage配下）のフォルダで、Webやスマートフォンなどから追加されたファイルが更新ボタンを押しても表示されない不具合を修正しました。フォルダを開くたびにOneDriveと同期してから一覧を取得するようになりました</div>
-            <div class="change"><span class="tag fixed">FIX</span>OneDrive上でのファイル削除・名前変更・移動がOneDrive側（Web/他端末）へ反映されにくい、または反映が遅れる不具合を修正しました</div>
-            <div class="change"><span class="tag fixed">FIX</span>iCloud Driveと「デスクトップと書類」の同期フォルダ（~/Desktopと~/Documents）をクラウドとして認識していなかった不具合を修正しました。他の端末やブラウザから追加・変更したファイルが反映されず、削除・名前変更・移動もiCloudへ伝わりにくい状態でした</div>
-            <div class="change"><span class="tag new">NEW</span>クラウド（iCloud・OneDriveなど）やネットワーク共有のフォルダを表示している間は、定期的に同期を要求して変化を検出し、自動的に一覧を更新するようにしました。フォルダを開いたままでも他の端末やブラウザからの変更が反映されます</div>
-            <div class="change"><span class="tag fixed">FIX</span>他の端末でファイルの中身だけが書き換えられた場合など、フォルダ内の項目が増減しない変更を検出できなかった問題を修正しました</div>
           </div>
         </div>
 

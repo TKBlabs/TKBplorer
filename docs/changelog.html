@@ -4,20 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TKBplorer 過去のリリースノート — TKB Labs</title>
-<meta name="description" content="TKBplorer v1.0.27 以前の全リリースノート。タブ・複数ペイン・OneDrive/iCloud・Apple 公認 notarization への道など、19 回の更新を圧縮して一覧。">
+<meta name="description" content="TKBplorer v1.0.28 以前の全リリースノート。タブ・複数ペイン・OneDrive/iCloud・Apple 公認 notarization への道など、20 回の更新を圧縮して一覧。">
 <link rel="canonical" href="https://tkbtk.com/TKBplorer/changelog.html">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://tkbtk.com/TKBplorer/changelog.html">
 <meta property="og:site_name" content="TKB Labs">
 <meta property="og:title" content="TKBplorer 過去のリリースノート — TKB Labs">
-<meta property="og:description" content="TKBplorer v1.0.27 以前の全リリースノート。タブ・複数ペイン・OneDrive/iCloud・Apple 公認 notarization への道など、19 回の更新を圧縮して一覧。">
+<meta property="og:description" content="TKBplorer v1.0.28 以前の全リリースノート。タブ・複数ペイン・OneDrive/iCloud・Apple 公認 notarization への道など、20 回の更新を圧縮して一覧。">
 <meta property="og:image" content="https://tkbtk.com/assets/icons/tkbplorer.png">
 <meta property="og:image:width" content="512">
 <meta property="og:image:height" content="512">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="TKBplorer 過去のリリースノート — TKB Labs">
-<meta name="twitter:description" content="TKBplorer v1.0.27 以前の全リリースノート。タブ・複数ペイン・OneDrive/iCloud・Apple 公認 notarization への道など、19 回の更新を圧縮して一覧。">
+<meta name="twitter:description" content="TKBplorer v1.0.28 以前の全リリースノート。タブ・複数ペイン・OneDrive/iCloud・Apple 公認 notarization への道など、20 回の更新を圧縮して一覧。">
 <meta name="twitter:image" content="https://tkbtk.com/assets/icons/tkbplorer.png">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2T42LFKKTJ"></script>
@@ -123,6 +123,7 @@ h1.pg{font-family:var(--font-display);font-size:30px;font-weight:700;letter-spac
 
     <div class="layout">
       <nav class="rail" aria-label="バージョン索引">
+        <a href="#rv1028">v1.0.28</a>
         <a href="#rv1027">v1.0.27</a>
         <a href="#rv1026">v1.0.26</a>
         <a href="#rv1025">v1.0.25</a>
@@ -145,6 +146,18 @@ h1.pg{font-family:var(--font-display);font-size:30px;font-weight:700;letter-spac
       </nav>
 
       <div class="tl" id="tl">
+        <div class="tl-head" id="rv1028">
+          <span class="tl-ver">v1.0.28</span>
+          <time class="tl-date">2026-09-23 · ビルド28</time>
+          <span class="tl-cnt">5 件</span>
+        </div>
+        <div class="tl-body">
+          <div class="change"><span class="tag fixed">FIX</span>OneDrive（Library/CloudStorage配下）のフォルダで、Webやスマートフォンなどから追加されたファイルが更新ボタンを押しても表示されない不具合を修正しました。フォルダを開くたびにOneDriveと同期してから一覧を取得するようになりました</div>
+          <div class="change"><span class="tag fixed">FIX</span>OneDrive上でのファイル削除・名前変更・移動がOneDrive側（Web/他端末）へ反映されにくい、または反映が遅れる不具合を修正しました</div>
+          <div class="change"><span class="tag fixed">FIX</span>iCloud Driveと「デスクトップと書類」の同期フォルダ（~/Desktopと~/Documents）をクラウドとして認識していなかった不具合を修正しました。他の端末やブラウザから追加・変更したファイルが反映されず、削除・名前変更・移動もiCloudへ伝わりにくい状態でした</div>
+          <div class="change"><span class="tag new">NEW</span>クラウド（iCloud・OneDriveなど）やネットワーク共有のフォルダを表示している間は、定期的に同期を要求して変化を検出し、自動的に一覧を更新するようにしました。フォルダを開いたままでも他の端末やブラウザからの変更が反映されます</div>
+          <div class="change"><span class="tag fixed">FIX</span>他の端末でファイルの中身だけが書き換えられた場合など、フォルダ内の項目が増減しない変更を検出できなかった問題を修正しました</div>
+        </div>
         <div class="tl-head" id="rv1027">
           <span class="tl-ver">v1.0.27</span>
           <time class="tl-date">2026-09-16 · ビルド27</time>
