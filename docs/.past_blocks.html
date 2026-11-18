@@ -1,0 +1,229 @@
+        <div class="release">
+          <div class="release-meta">
+            <div class="release-version">v1.0.27</div>
+            <div class="release-date">2026-09-16 · ビルド27</div>
+          </div>
+          <div class="change-list">
+            <div class="change"><span class="tag fixed">FIX</span>ゴミ箱が使えない共有ボリューム（OneDriveの共有ライブラリやSMB共有など）での削除時に作成する取り消し用の退避コピーが、アプリを長期間起動したままにしたり強制終了した場合に無制限に蓄積してしまう不具合を修正しました</div>
+            <div class="change">起動時に24時間より古い退避コピーだけを自動的に削除するようにしました。直近の操作の「取り消し」には影響しません</div>
+            <div class="change"><span class="tag new">NEW</span>ゴミ箱フォルダを表示中に、Finderと同じ「ゴミ箱を空にする」操作をツールバーから実行できるようにしました</div>
+          </div>
+        </div>
+
+        <div class="release">
+          <div class="release-meta">
+            <div class="release-version">v1.0.26</div>
+            <div class="release-date">2026-09-15 · ビルド26</div>
+          </div>
+          <div class="change-list">
+            <div class="change"><span class="tag new">NEW</span>設定に「共有ライブラリ内のOfficeファイルの開き方」を追加。Finder準拠とオンラインで開く方式を選択できます</div>
+            <div class="change"><span class="tag new">NEW</span>オンライン設定では、OneDriveの共有ライブラリ配下のExcel・Word・PowerPointをデスクトップアプリでSharePoint上のファイルとして開きます。Office側の対応条件を満たす場合に自動保存を利用できます</div>
+            <div class="change">個人用領域（組織アカウントの個人領域を含む）とその他の場所は、設定にかかわらず常にFinder準拠で開きます</div>
+            <div class="change">日本語ファイル名とOffice起動用URLの処理を改善。共有ライブラリの同期情報から対象ファイルを特定し、複数ファイルを開く場合にも設定を適用します</div>
+            <div class="change">オンラインで開けない場合は、確認画面からキャンセルまたはFinder準拠で開く操作を選択できます</div>
+            <div class="change">注意：オンライン起動にはMac版OneDriveのローカル同期情報を利用します。OneDrive側の仕様変更、同期状態、Officeのサインイン状態や組織のポリシーにより利用できない場合があります</div>
+          </div>
+        </div>
+
+        <div class="release">
+          <div class="release-meta">
+            <div class="release-version">v1.0.25</div>
+            <div class="release-date">2026-09-15 · ビルド25</div>
+          </div>
+          <div class="change-list">
+            <div class="change"><span class="tag new">NEW</span>OneDriveのフォルダカラー16色に対応。Web版やWindows版で設定した色を、一覧・アイコン・カラム表示にも反映します</div>
+            <div class="change"><span class="tag new">NEW</span>OneDrive配下ではFinderのラベルに代わり、右クリックからOneDriveのフォルダカラーを選択できます。対応フォルダでは、TKBplorerで変更した色もOneDriveへ反映します</div>
+            <div class="change"><span class="tag new">NEW</span>OneDriveへのログイン利用を設定できるようになりました。ログインしない場合は色の読み込みのみ、ログインを有効にして対象アカウントでサインインすると色の変更も利用できます。Mac版OneDriveとは別にサインインが必要です</div>
+            <div class="change"><span class="tag new">NEW</span>個人用・法人用アカウントの認証情報を分離して管理。表示・ログイン利用設定は全アカウント共通です</div>
+            <div class="change"><span class="tag new">NEW</span>OneDriveの標準フォルダ色を「Finder標準」または「OneDrive標準（黄色）」から選択可能。TKBplorer内の表示だけに適用されます</div>
+            <div class="change"><span class="tag new">NEW</span>OneDriveの右クリックに「オンラインで開く」を追加。その同期アカウントの「マイファイル」を既定のブラウザで開きます。共有ライブラリからも対応する法人アカウントの「マイファイル」を開きます</div>
+            <div class="change">注意：色の読み込みにはMac版OneDriveのローカル同期情報を利用します。共有ライブラリなど色の変更に対応しないフォルダでは変更操作を利用できません。OneDrive側の仕様変更や組織のポリシーにより利用が制限される場合があります。ブラウザで開く際は、ブラウザ側でログインが必要な場合があります</div>
+          </div>
+        </div>
+
+        <div class="release">
+          <div class="release-meta">
+            <div class="release-version">v1.0.24</div>
+            <div class="release-date">2026-09-15</div>
+          </div>
+          <div class="change-list">
+            <div class="change"><span class="tag new">NEW</span>Finderのタグ(ラベル)機能に対応。フォルダやファイルを右クリックして「ラベル」から色を設定でき、Finderと同じ方式で保存されるため相互に反映されます。フォルダアイコンもラベルの色で表示されます</div>
+          </div>
+        </div>
+
+        <div class="release">
+            <div class="release-meta">
+                <span class="release-version">v1.0.23</span>
+                <time class="release-date">2026-09-11</time>
+            </div>
+            <div class="change-list">
+<div class="change"><span class="tag new">NEW</span>「ターミナルで開く」で使用するアプリを設定画面から選べるように追加。iTermなどインストール済みのターミナルアプリを自動検出し、一覧にないアプリも手動で選択可能</div>
+            </div>
+        </div>
+
+        <div class="release">
+            <div class="release-meta">
+                <span class="release-version">v1.0.22</span>
+                <time class="release-date">2026-09-08</time>
+            </div>
+            <div class="change-list">
+<div class="change"><span class="tag improved">IMPROVED</span>Swift並行性に関するビルド警告を解消し、検索欄とアイコン生成をより安全に処理するように改善</div>
+<div class="change"><span class="tag fixed">FIXED</span>ドラッグ＆ドロップ操作に関するビルド警告を解消</div>
+<div class="change"><span class="tag fixed">FIXED</span>アプリ本体、単体テスト、UIテストを新しい開発用署名へ統一</div>
+            </div>
+        </div>
+
+        <div class="release">
+            <div class="release-meta">
+                <span class="release-version">v1.0.21</span>
+                <time class="release-date">2026-09-08</time>
+            </div>
+            <div class="change-list">
+<div class="change"><span class="tag improved">IMPROVED</span>左右2ペイン表示で、アクティブペインを切り替えるとウィンドウタイトルも切り替わるように改善</div>
+<div class="change"><span class="tag fixed">FIXED</span>再読み込み後に変更日が「今日」「昨日」などの相対表示へ正しく更新されるように修正</div>
+<div class="change"><span class="tag fixed">FIXED</span>複数タブでFile Providerのフォルダを開いたとき、読み込み中のまま表示されなくなることがある問題を修正</div>
+            </div>
+        </div>
+
+        <div class="release">
+            <div class="release-meta">
+                <span class="release-version">v1.0.20</span>
+                <time class="release-date">2026-09-06</time>
+            </div>
+            <div class="change-list">
+<div class="change"><span class="tag new">NEW</span>複数選択時のステータスバーに、選択項目の合計容量を表示するように追加</div>
+<div class="change"><span class="tag new">NEW</span>フォルダを右クリックして「容量を計算する」を選ぶと、配下のファイル数・フォルダ数・合計容量を別ウィンドウで計算・表示するように追加。計算中はキャンセル可能</div>
+            </div>
+        </div>
+
+        <div class="release">
+            <div class="release-meta">
+                <span class="release-version">v1.0.19</span>
+                <time class="release-date">2026-09-04</time>
+            </div>
+            <div class="change-list">
+<div class="change"><span class="tag new">NEW</span>よく使う項目に「アプリケーション」を追加。/Applications・/System/Applications・~/Applicationsをまとめて一覧表示</div>
+<div class="change"><span class="tag improved">IMPROVED</span>アプリ(.app)のサイズをバンドル全体の再帰計算で正確に表示するように変更(従来は「--」表示)</div>
+<div class="change"><span class="tag improved">IMPROVED</span>Finderと同様、システムの標準フォルダ(書類・デスクトップ等)やアプリ名を日本語のローカライズ名で表示するように変更</div>
+            </div>
+        </div>
+
+        <div class="release">
+            <div class="release-meta">
+                <span class="release-version">v1.0.18</span>
+                <time class="release-date">2026-09-03</time>
+            </div>
+            <div class="change-list">
+<div class="change"><span class="tag new">NEW</span>新規フォルダに加えて新規ファイルも作成できるように追加。ツールバー・メニュー・右クリックメニューから利用可能</div>
+<div class="change"><span class="tag new">NEW</span>ZIP圧縮・展開の進捗表示とキャンセルに対応。ZIPをダブルクリックで直接展開できるように追加</div>
+            </div>
+        </div>
+
+        <div class="release">
+            <div class="release-meta">
+                <span class="release-version">v1.0.17</span>
+                <time class="release-date">2026-08-30</time>
+            </div>
+            <div class="change-list">
+<div class="change"><span class="tag improved">IMPROVED</span>タブ欄に横スクロールバーが出たときにタブが潰れないよう、スクロールバーの分だけ下の表示を下げるように改善</div>
+<div class="change"><span class="tag fixed">FIXED</span>2ペイン表示で片方だけにスクロールバーが出た場合も、左右のタブとアドレスバーの高さが揃うように修正</div>
+            </div>
+        </div>
+
+        <div class="release">
+            <div class="release-meta">
+                <span class="release-version">v1.0.16</span>
+                <time class="release-date">2026-08-28</time>
+            </div>
+            <div class="change-list">
+<div class="change"><span class="tag improved">IMPROVED</span>隠しファイルを一覧・カラム・アイコン表示すべてで半透明にし、通常のファイルと区別しやすく改善</div>
+<div class="change"><span class="tag new">NEW</span>隠しファイル表示時に「.DS_Storeを表示」の可否を設定画面で切り替え可能に追加</div>
+            </div>
+        </div>
+
+        <div class="release">
+            <div class="release-meta">
+                <span class="release-version">v1.0.15</span>
+                <time class="release-date">2026-08-28</time>
+            </div>
+            <div class="change-list">
+<div class="change"><span class="tag improved">IMPROVED</span>証明書を更新</div>
+            </div>
+        </div>
+
+        <div class="release">
+            <div class="release-meta">
+                <span class="release-version">v1.0.14</span>
+                <time class="release-date">2026-08-19</time>
+            </div>
+            <div class="change-list">
+<div class="change"><span class="tag new">NEW</span>ワークスペースの名前を変更できるように追加（設定画面の「名前を変更」ボタン、名前のダブルクリック、右クリックメニュー）</div>
+<div class="change"><span class="tag improved">IMPROVED</span>ワークスペースの設定画面から「選択したワークスペースを使用」ボタンを削除し、切り替えはツールバーへ一本化</div>
+            </div>
+        </div>
+
+        <div class="release">
+            <div class="release-meta">
+                <span class="release-version">v1.0.13</span>
+                <time class="release-date">2026-08-17</time>
+            </div>
+            <div class="change-list">
+<div class="change"><span class="tag fixed">FIXED</span>起動直後や再アクティブ化のあと、最初のクリックでサイドバーが下へずれる問題を修正</div>
+            </div>
+        </div>
+
+        <div class="release">
+            <div class="release-meta">
+                <span class="release-version">v1.0.12</span>
+                <time class="release-date">2026-08-17</time>
+            </div>
+            <div class="change-list">
+<div class="change"><span class="tag fixed">FIXED</span>サイドバーの行の高さを固定し、「よく使う項目」の高さが状況によって変わる問題を修正</div>
+            </div>
+        </div>
+
+        <div class="release">
+            <div class="release-meta">
+                <span class="release-version">v1.0.11</span>
+                <time class="release-date">2026-08-17</time>
+            </div>
+            <div class="change-list">
+<div class="change"><span class="tag improved">IMPROVED</span>一覧表示で左矢印でフォルダを出たあと、右矢印で入り直すと前回フォーカスしていた項目へ戻るように改善</div>
+            </div>
+        </div>
+
+        <div class="release">
+            <div class="release-meta">
+                <span class="release-version">v1.0.10</span>
+                <time class="release-date">2026-08-17</time>
+            </div>
+            <div class="change-list">
+<div class="change"><span class="tag new">NEW</span>自動アップデートに対応。24時間ごとに新しい版を確認します</div>
+<div class="change"><span class="tag new">NEW</span>右ドラッグでコピーと移動を選べるように追加</div>
+<div class="change"><span class="tag new">NEW</span>お気に入りをドラッグでラベル間移動、グループ名の変更に対応</div>
+<div class="change"><span class="tag new">NEW</span>一覧表示の列設定を保存・復元できるように追加</div>
+<div class="change"><span class="tag new">NEW</span>サブフォルダを含む検索のショートカットを追加</div>
+<div class="change"><span class="tag new">NEW</span>複数選択時のコンテキストメニューを追加</div>
+<div class="change"><span class="tag improved">IMPROVED</span>コピー・移動の進捗率と転送速度を表示するように改善</div>
+<div class="change"><span class="tag improved">IMPROVED</span>カラム表示の行メニューを刷新し、右ドラッグに対応</div>
+<div class="change"><span class="tag improved">IMPROVED</span>サブフォルダ検索の応答性とクラウド同期状態の監視を改善</div>
+<div class="change"><span class="tag improved">IMPROVED</span>文字サイズに合わせて一覧の列幅が変わるように改善</div>
+<div class="change"><span class="tag fixed">FIXED</span>文字サイズ変更後に一覧の上下キー移動が効かなくなる問題を修正</div>
+<div class="change"><span class="tag fixed">FIXED</span>ドラッグ操作とクイックルックまわりの不具合を修正</div>
+            </div>
+        </div>
+
+        <div class="release">
+            <div class="release-meta">
+                <span class="release-version">v1.0.0</span>
+                <time class="release-date">2026-07-28</time>
+            </div>
+            <div class="change-list">
+<div class="change"><span class="tag">DEV</span>公開前の開発版ページを用意</div>
+<div class="change"><span class="tag new">NEW</span>タブ、左右・上下2ペイン、セッション復元に対応</div>
+<div class="change"><span class="tag new">NEW</span>進捗とキャンセルを備えたファイル操作、競合解決、履歴を追加</div>
+<div class="change"><span class="tag new">NEW</span>バッチ名前変更、Finder互換タグ、ZIP圧縮・展開に対応</div>
+<div class="change"><span class="tag new">NEW</span>外部ドライブ、ネットワーク共有、iCloud Driveに対応</div>
+<div class="change"><span class="tag new">NEW</span>ツールバー、表示、ショートカット、ワークスペースをカスタマイズ可能</div>
+            </div>
+        </div>
