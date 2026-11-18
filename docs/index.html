@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TKBplorer — TKB Labs</title>
+<meta name="description" content="TKBplorerは、タブ、複数ペイン、プレビュー、タグ、ネットワーク共有に対応したApple Silicon向けmacOSファイル管理アプリです。">
+<link rel="canonical" href="https://tkbtk.com/TKBplorer/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tkbtk.com/TKBplorer/">
+<meta property="og:site_name" content="TKB Labs">
+<meta property="og:title" content="TKBplorer — TKB Labs">
+<meta property="og:description" content="タブと複数ペインで、コピー、整理、検索、プレビューまでを一つの画面で進めるmacOSファイル管理アプリ。">
+<meta property="og:image" content="https://tkbtk.com/assets/screenshots/tkbplorer.jpg?v=2">
+<meta property="og:image:width" content="2000">
+<meta property="og:image:height" content="1080">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TKBplorer — TKB Labs">
+<meta name="twitter:description" content="タブと複数ペインで、コピー、整理、検索、プレビューまでを一つの画面で進めるmacOSファイル管理アプリ。">
+<meta name="twitter:image" content="https://tkbtk.com/assets/screenshots/tkbplorer.jpg?v=2">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "TKBplorer",
+  "url": "https://tkbtk.com/TKBplorer/",
+  "description": "TKBplorerは、タブ、複数ペイン、プレビュー、タグ、ネットワーク共有に対応したApple Silicon向けmacOSファイル管理アプリです。",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "macOS Tahoe 26.5以降",
+  "softwareVersion": "1.0.37",
+  "downloadUrl": "https://github.com/TKBlabs/TKBplorer/releases/download/v1.0.37/TKBplorer_1.0.37.dmg",
+  "image": "https://tkbtk.com/assets/icons/tkbplorer.png",
+  "author": { "@type": "Organization", "name": "TKB Labs", "url": "https://tkbtk.com/" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2T42LFKKTJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2T42LFKKTJ');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@400;500;600;700&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700;900&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/site.css?v=267b1ce4">
+<style>
+/* =========================================================
+   TKB Labs — shared design system
+   Motif: real macOS window chrome (traffic lights / titlebars)
+   as the one signature element, reused everywhere.
+   ========================================================= */
+
+:root{
+  /* --- color tokens --- */
+  --bg:        #16171b;
+  --bg-alt:    #1b1d22;
+  --surface:   #212328;
+  --surface-2: #26282e;
+  --titlebar:  #2b2d33;
+  --border:    #34363d;
+  --border-soft: #2a2c32;
+
+  --text:       #e9e7e2;
+  --text-dim:   #999da7;
+  --text-faint: #64676f;
+
+  /* app / accent identity colors (drawn from a syntax-highlight palette) */
+  --amber: #f0c05a;   /* TKBshot  — capture / flash   */
+  --teal:  #5fd3c4;   /* TKBcal   — calendar / type    */
+  --pink:  #ff6f9c;   /* TKBplorer  — keyword / utility  */
+  --blue:  #7bb0ff;   /* links / neutral accent        */
+
+  --ok:    #6fd08c;
+  --warn:  #f0c05a;
+  --fix:   #ff8a80;
+
+  --radius-lg: 14px;
+  --radius-md: 10px;
+  --radius-sm: 6px;
+
+  --shadow-window: 0 1px 0 rgba(255,255,255,0.03) inset, 0 20px 50px -20px rgba(0,0,0,0.6);
+
+  --font-display: 'M PLUS 1 Code', 'JetBrains Mono', monospace;
+  --font-body: 'Zen Kaku Gothic New', 'Hiragino Kaku Gothic ProN', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+h1.headline{
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(32px, 5vw, 54px);
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  max-width: 16ch;
+}
+
+.hero-sub{
+  margin-top: 24px;
+  max-width: 46ch;
+  color: var(--text-dim);
+  font-size: 16.5px;
+}
+
+.app-hero-icon{
+  width: 64px; height: 64px;
+  border-radius: 16px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 22px;
+  color: #14151a;
+  overflow: hidden;
+  margin-bottom: 22px;
+}
+
+.app-hero-icon img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.download-counter{
+  margin-top: 10px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+.download-note{
+  margin-top: 14px;
+  padding: 12px 14px;
+  border: 1px solid rgba(240,192,90,0.35);
+  border-radius: var(--radius-sm);
+  background: rgba(240,192,90,0.08);
+  color: var(--text-dim);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.download-note strong{ color: var(--text); }
+
+/* 実画面の写真は横長なので、枠の比率を写真に合わせて上下の余白を出さない */
+.screen-mock.screen-shot{ aspect-ratio: auto; padding: 10px; }
+
+.screen-mock img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  border: 1px solid var(--border-soft);
+}
+
+.explorer-mock{
+  width: 100%;
+  min-height: 300px;
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr) 132px;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid var(--border-soft);
+  border-radius: 10px;
+  background: #191a1f;
+}
+
+.explorer-sidebar,
+.explorer-files,
+.explorer-preview{
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #30323a;
+  border-radius: 8px;
+  background: #202228;
+}
+
+.explorer-line{
+  height: 8px;
+  margin-bottom: 11px;
+  border-radius: 4px;
+  background: #3a3d46;
+}
+
+.explorer-line.active{ background: var(--blue); opacity: .8; }
+
+.explorer-file{
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  padding: 9px 4px;
+  border-bottom: 1px solid #30323a;
+  color: var(--text-dim);
+  font-size: 12px;
+}
+
+.explorer-file::before{ content: "▰"; color: var(--blue); }
+
+.explorer-preview{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--text-faint);
+  font-size: 12px;
+}
+
+@media (max-width: 640px){
+  .explorer-mock{ grid-template-columns: 72px minmax(0, 1fr); min-height: 250px; }
+  .explorer-preview{ display: none; }
+}
+
+/* final polish */
+body{
+  background:
+    radial-gradient(circle at 15% 4%, rgba(123,176,255,.08), transparent 28rem),
+    radial-gradient(circle at 88% 26%, rgba(123,176,255,.05), transparent 24rem),
+    var(--bg);
+}
+
+.menubar-brand, .btn{ -webkit-tap-highlight-color: transparent; }
+
+.feature{ transition: transform .2s ease, border-color .2s ease, background .2s ease; }
+
+.feature:hover{ transform: translateY(-3px); border-color: #454851; background: var(--surface); }
+
+.btn-primary{ box-shadow: 0 10px 28px -14px var(--blue); }
+
+@media (max-width: 640px){
+  .wrap, .menubar-inner{ padding-left: 20px; padding-right: 20px; }
+  .menubar-nav{ gap: 14px; }
+  .menubar-nav a:not(.pill){ display: none; }
+  section{ padding: 52px 0; }
+  .section-head{ margin-bottom: 24px; }
+  .app-hero{ padding-bottom: 48px; }
+  .btn{ width: 100%; justify-content: center; }
+  .cta-row{ align-items: stretch !important; }
+  .spec-row{ gap: 18px; }
+  .spec-row span:last-child{ text-align: right; }
+}
+</style>
+</head>
+<body>
+
+  <header class="menubar">
+    <div class="menubar-inner">
+      <a href="https://tkbtk.com/" class="menubar-brand" style="text-decoration:none;">
+        <span class="dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></span>
+        TKB Labs
+      </a>
+      <nav class="menubar-nav" aria-label="メインナビゲーション">
+        <a href="../#apps">Apps</a>
+        <a href="#readme">README</a>
+        <a href="#" class="pill" data-email-link>Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <a href="../#apps" class="back-link" style="margin-top:28px;">← すべてのアプリ</a>
+
+    <section class="app-hero" style="padding-top:0;">
+      <div>
+        <div class="app-hero-icon"><img src="../assets/icons/tkbplorer-192.webp" width="64" height="64" alt="TKBplorer icon"></div>
+        <h1>TKBplorer</h1>
+        <p class="tagline">タブと複数ペインで、コピー、整理、検索、プレビューまでを一つの画面で進めるファイル管理アプリ。</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" style="background:var(--blue);" href="https://github.com/TKBlabs/TKBplorer/releases/download/v1.0.37/TKBplorer_1.0.37.dmg" data-download-key="tkbplorer">↓ DMGをダウンロード（v1.0.37）</a>
+          <a class="btn btn-ghost" href="#readme">README を見る</a>
+        </div>
+        <p class="download-counter" data-download-count="tkbplorer">累計ダウンロード: 集計中...</p>
+        <p class="download-note"><strong>Appleの公証（Notarization）を受けています。</strong><br>ZIPを展開してTKBplorer.appを<code>/アプリケーション</code>へ移動すれば、そのまま起動できます。</p>
+        <div class="spec-list">
+          <span><b>対応OS</b> macOS Tahoe 26.5以降</span>
+          <span><b>チップ</b> Apple Silicon</span>
+          <span><b>配布形式</b> ZIP</span>
+        </div>
+      </div>
+
+      <a class="window" href="../assets/screenshots/tkbplorer.jpg?v=2" target="_blank" rel="noopener" aria-label="TKBplorerのスクリーンショットを拡大表示">
+        <div class="window-titlebar">
+          <span class="dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></span>
+          <span class="title">TKBplorer — ファイル</span>
+        </div>
+        <div class="screen-mock screen-shot" style="background:var(--bg-alt);">
+          <img src="../assets/screenshots/tkbplorer-1000.webp?v=2" srcset="../assets/screenshots/tkbplorer-1000.webp?v=2 1000w, ../assets/screenshots/tkbplorer-2000.webp?v=2 2000w" sizes="(max-width: 1080px) 100vw, 500px" width="1000" height="540" alt="TKBplorerの画面。左右2つのペインにそれぞれタブを並べ、左はカメラロールの写真をアイコン表示、右はOneDriveのフォルダを一覧表示している">
+        </div>
+      </a>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2 class="section-title">概要</h2>
+        <span class="section-tag">// overview</span>
+      </div>
+      <div class="overview">
+        <div class="overview-text">
+          <p>
+            TKBplorerは、macOSの日常的なファイル整理を一つの画面で進めるためのファイル管理アプリです。
+            タブと左右・上下の2ペインを使い、場所を行き来しながらコピー、移動、検索、プレビューを行えます。
+          </p>
+          <p>
+            ファイル操作の進捗とキャンセル、Finder互換タグ、バッチ名前変更、ZIP、ネットワーク共有、
+            iCloud Drive、ワークスペース保存まで、Finderへ戻らず完結できる機能をまとめています。
+          </p>
+        </div>
+        <div class="spec-card">
+          <h4>Specifications</h4>
+          <div class="spec-row"><span>対応OS</span><span>macOS Tahoe 26.5以降</span></div>
+          <div class="spec-row"><span>対応チップ</span><span>Apple Silicon</span></div>
+          <div class="spec-row"><span>言語</span><span>日本語</span></div>
+          <div class="spec-row"><span>配布形式</span><span>ZIP</span></div>
+          <div class="spec-row"><span>ライセンス</span><span>Freeware</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2 class="section-title">主な機能</h2>
+        <span class="section-tag">// features</span>
+      </div>
+      <div class="feature-grid">
+        <div class="feature reveal">
+          <div class="feature-icon" style="background:var(--blue); color:#16171b;">⧉</div>
+          <h3>タブと複数ペイン</h3>
+          <p>左右・上下2ペイン、ペインごとのタブと履歴、再起動後の作業状態復元に対応しています。</p>
+        </div>
+        <div class="feature reveal">
+          <div class="feature-icon" style="background:var(--blue); color:#16171b;">⌨</div>
+          <h3>安全なファイル操作</h3>
+          <p>コピー、移動、削除の進捗、キャンセル、競合解決、キューと操作履歴を確認できます。</p>
+        </div>
+        <div class="feature reveal">
+          <div class="feature-icon" style="background:var(--blue); color:#16171b;">✎</div>
+          <h3>整理と詳細検索</h3>
+          <p>バッチ名前変更、Finder互換タグ、保存済み検索、更新日・種類・サイズによる詳細検索を利用できます。</p>
+        </div>
+        <div class="feature reveal">
+          <div class="feature-icon" style="background:var(--blue); color:#16171b;">▣</div>
+          <h3>常設プレビュー</h3>
+          <p>選択したファイルを画面内で確認しながら、一覧や別ペインでの操作を続けられます。</p>
+        </div>
+        <div class="feature reveal">
+          <div class="feature-icon" style="background:var(--blue); color:#16171b;">◐</div>
+          <h3>外部・ネットワーク・iCloud</h3>
+          <p>外部ドライブ、SMBなどのネットワーク共有、iCloud Driveを同じ操作感で扱えます。</p>
+        </div>
+        <div class="feature reveal">
+          <div class="feature-icon" style="background:var(--blue); color:#16171b;">♫</div>
+          <h3>表示とワークスペース</h3>
+          <p>ツールバー、表示密度、列、ショートカットを調整し、ペインとタブの構成を保存できます。</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2 class="section-title">リリースノート</h2>
+        <span class="section-tag">// changelog · 最新10件</span>
+      </div>
+                              <div class="changelog">
+        <div class="release">
+          <div class="release-meta">
+            <div class="release-version">v1.0.37</div>
+            <div class="release-date">2026-11-12 · ビルド37</div>
+            <span class="release-latest">最新版</span>
+          </div>
+          <div class="change-list">
+            <div class="change"><span class="tag fixed">FIX</span>ネットワーク共有が接続されていないとき、その共有のフォルダだけを開いていたワークスペースへ切り替えられなかった問題を修正しました。見つからない場所のタブもそのまま開き、共有を接続してから読み直せます。一部のタブが見つからないまま切り替えると、そのタブが消えてしまう問題も直しました</div>
+            <div class="change"><span class="tag fixed">FIX</span>写真アプリから動画をドロップすると、元の動画ではなく縮小版の画像が保存されていた問題を修正しました</div>
+            <div class="change"><span class="tag new">NEW</span>サイドバーの「よく使う項目」やお気に入りのフォルダへファイルをドロップして、移動（Optionキーでコピー）できるようにしました。ゴミ箱へドロップするとゴミ箱へ移します</div>
+            <div class="change"><span class="tag improved">IMPROVED</span>写真アプリからドロップしたときのファイル名を、設定で「オリジナルのファイル名」と「撮影日（YYYYMMDD HHMMSS）」から選べるようにしました</div>
+            <div class="change"><span class="tag improved">IMPROVED</span>分割線のダブルクリックで等分するとき、サイドバーの幅を除いて左右のペインの幅が揃うようにしました</div>
+            <div class="change"><span class="tag improved">IMPROVED</span>「アプリケーション」フォルダ以外から起動したときに、移動を勧めるようにしました。ダウンロードした場所のままでは自動アップデートがうまく動かないことがあるためです</div>
+          </div>
+        </div>
+
+        <div class="release">
+          <div class="release-meta">
+            <div class="release-version">v1.0.36</div>
+            <div class="release-date">2026-10-26 · ビルド36</div>
+          </div>
+          <div class="change-list">
+            <div class="change"><span class="tag fixed">FIX</span>スリープから復帰した直後などにネットワーク共有（SMB）の読み込みが止まったままになる問題を修正しました。応答がないときは「サーバーから応答がありません」と表示し、「再試行」で読み直せます。スリープ復帰後は共有フォルダを開いているタブを自動で読み直します</div>
+            <div class="change"><span class="tag improved">IMPROVED</span>2ペイン表示で、ペインの間の分割線をダブルクリックすると、ちょうど半分ずつの幅に戻せるようにしました</div>
+          </div>
+        </div>
+
+        <div class="release">
+          <div class="release-meta">
+            <div class="release-version">v1.0.35</div>
+            <div class="release-date">2026-10-16 · ビルド35</div>
+          </div>
+          <div class="change-list">
+            <div class="change"><span class="tag improved">IMPROVED</span>サイドバーの「場所」に表示されるSDカードや外付けディスクに、Finderと同じ取り出しボタンを付けました。右クリックメニューの「取り出す」からも、安全に取り外せる状態にできます</div>
+          </div>
+        </div>
+
+        <div class="release">
+          <div class="release-meta">
+            <div class="release-version">v1.0.34</div>
+            <div class="release-date">2026-10-11 · ビルド34</div>
+          </div>
+          <div class="change-list">
+            <div class="change"><span class="tag improved">IMPROVED</span>OneDriveの「Shortcuts」フォルダを、OneDriveと同じ青いフォルダにビルのマークで表示するようにしました。このフォルダの色はOneDriveで変更できないため、色の変更メニューは使えなくなります</div>
+            <div class="change"><span class="tag improved">IMPROVED</span>共有しているOneDriveのフォルダに、OneDriveと同じ人型のマークを表示するようにしました。マークはフォルダの色に合わせて表示されます</div>
+          </div>
+        </div>
+
+        <div class="release">
+          <div class="release-meta">
+            <div class="release-version">v1.0.33</div>
+            <div class="release-date">2026-10-05 · ビルド33</div>
+          </div>
+          <div class="change-list">
+            <div class="change"><span class="tag fixed">FIX</span>起動中にNASの再起動などでネットワーク共有（SMB）が切断されると、そのフォルダを開いていたタブがすべてホームフォルダに移ってしまう問題を修正しました。切断中も元のフォルダのまま待ち、再接続されると同じフォルダを再び表示します</div>
+            <div class="change"><span class="tag improved">IMPROVED</span>サイドバーのネットワーク欄で、未接続の共有に「接続」ボタンを表示するようにしました。押すとその共有への接続を試みます</div>
+          </div>
+        </div>
+
+        <div class="release">
+          <div class="release-meta">
+            <div class="release-version">v1.0.32</div>
+            <div class="release-date">2026-10-03 · ビルド32</div>
+          </div>
+          <div class="change-list">
+            <div class="change"><span class="tag fixed">FIX</span>OneDrive上のファイルをゴミ箱へ入れようとすると「アクセス権がない」として失敗し、何度試しても削除できないことがある問題を修正しました。この場合はFinderに依頼してゴミ箱へ移します。初回だけ「TKBplorerがFinderを制御しようとしています」と確認が表示されることがあります</div>
+          </div>
+        </div>
+
+        <div class="release">
+          <div class="release-meta">
+            <div class="release-version">v1.0.31</div>
+            <div class="release-date">2026-10-02 · ビルド31</div>
+          </div>
+          <div class="change-list">
+            <div class="change"><span class="tag fixed">FIX</span>2つのペインを開いているとき、サムネイル表示で上下キーを押すと、もう一方のペインのリストの選択が動いてしまう問題を修正しました</div>
+            <div class="change"><span class="tag improved">IMPROVED</span>サムネイル表示で行の右端から→、左端から←を押すと、次の行の先頭・前の行の末尾へ移るようにしました。Shiftを押しながらなら選択範囲を広げられます</div>
+            <div class="change"><span class="tag fixed">FIX</span>サムネイル表示でQuick Lookを表示したまま矢印キーで移動すると、Quick Lookが閉じてしまう問題を修正しました</div>
+            <div class="change"><span class="tag improved">IMPROVED</span>Quick Lookの表示中にファイルをゴミ箱へ入れると、Quick Lookを開いたまま次のファイルを表示するようにしました（リスト・サムネイル・カラム表示共通）</div>
+            <div class="change"><span class="tag fixed">FIX</span>OneDrive上のファイルをゴミ箱へ入れるとき、一時的に「アクセス権がない」として失敗することがある問題に対処しました。少し待って再試行し、それでも失敗した場合はFinderと同じ方法でゴミ箱へ移します</div>
+          </div>
+        </div>
+
+        <div class="release">
+          <div class="release-meta">
+            <div class="release-version">v1.0.30</div>
+            <div class="release-date">2026-09-24 · ビルド30</div>
+          </div>
+          <div class="change-list">
+            <div class="change"><span class="tag improved">IMPROVED</span>Appleの公証（Notarization）を受けた配布物になりました。ダウンロードしたアプリが「開発元を検証できません」と表示されて起動できない問題が解消され、初回起動時にシステム設定から「このまま開く」を押す操作も不要になりました</div>
+          </div>
+        </div>
+
+        <div class="release">
+          <div class="release-meta">
+            <div class="release-version">v1.0.29</div>
+            <div class="release-date">2026-09-24 · ビルド29</div>
+          </div>
+          <div class="change-list">
+            <div class="change"><span class="tag fixed">FIX</span>ダウンロードしたアプリが「マルウェアが含まれている」と表示されて起動できないことがある問題を修正しました</div>
+          </div>
+        </div>
+
+        <div class="release">
+          <div class="release-meta">
+            <div class="release-version">v1.0.28</div>
+            <div class="release-date">2026-09-23 · ビルド28</div>
+          </div>
+          <div class="change-list">
+            <div class="change"><span class="tag fixed">FIX</span>OneDrive（Library/CloudStorage配下）のフォルダで、Webやスマートフォンなどから追加されたファイルが更新ボタンを押しても表示されない不具合を修正しました。フォルダを開くたびにOneDriveと同期してから一覧を取得するようになりました</div>
+            <div class="change"><span class="tag fixed">FIX</span>OneDrive上でのファイル削除・名前変更・移動がOneDrive側（Web/他端末）へ反映されにくい、または反映が遅れる不具合を修正しました</div>
+            <div class="change"><span class="tag fixed">FIX</span>iCloud Driveと「デスクトップと書類」の同期フォルダ（~/Desktopと~/Documents）をクラウドとして認識していなかった不具合を修正しました。他の端末やブラウザから追加・変更したファイルが反映されず、削除・名前変更・移動もiCloudへ伝わりにくい状態でした</div>
+            <div class="change"><span class="tag new">NEW</span>クラウド（iCloud・OneDriveなど）やネットワーク共有のフォルダを表示している間は、定期的に同期を要求して変化を検出し、自動的に一覧を更新するようにしました。フォルダを開いたままでも他の端末やブラウザからの変更が反映されます</div>
+            <div class="change"><span class="tag fixed">FIX</span>他の端末でファイルの中身だけが書き換えられた場合など、フォルダ内の項目が増減しない変更を検出できなかった問題を修正しました</div>
+          </div>
+        </div>
+
+        <a class="release-more" href="changelog.html">
+          <span class="cmd">&gt;</span> 過去のリリースノートへ
+        </a>
+
+      </div>
+    </section>
+
+    <section id="readme">
+      <div class="section-head">
+        <h2 class="section-title">README</h2>
+        <span class="section-tag">// cat README.md</span>
+      </div>
+      <div class="terminal">
+        <div class="window-titlebar">
+          <span class="dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></span>
+          <span class="title">README.md — TKBplorer</span>
+        </div>
+        <div class="terminal-body">
+          <p><span class="prompt">$</span> cat <span class="path">README.md</span></p>
+
+          <h4># TKBplorer</h4>
+          <pre>タブと複数ペインで、コピー、整理、検索、プレビューまでを一つの画面で進めるmacOS用ファイル管理アプリです。</pre>
+
+          <h4>## インストール</h4>
+          <ul>
+            <li>DMGを開き、TKBplorer.app を「アプリケーション」フォルダへドラッグします</li>
+            <li>Appleの公証（Notarization）済みのため、そのままダブルクリックで起動できます</li>
+            <li>v1.0.29以前から入れ替える場合は、フルディスクアクセスなどの許可を付け直してください</li>
+          </ul>
+
+          <h4>## アップデート</h4>
+          <ul>
+            <li>24時間ごとに自動で更新を確認し、新しい版があればお知らせします</li>
+            <li>メニュー「TKBplorer」→「アップデートを確認...」から手動でも確認できます</li>
+            <li>自動確認の有無は 設定 → 更新 で切り替えられます</li>
+            <li>アップデート時もGatekeeperの追加操作は不要です</li>
+          </ul>
+
+          <h4>## 動作環境</h4>
+          <ul>
+            <li>macOS Tahoe 26.5以降</li>
+            <li>Apple Silicon 搭載Mac（Intel Mac非対応）</li>
+          </ul>
+
+          <h4>## 主な機能</h4>
+          <ul>
+            <li>タブ、左右・上下2ペイン、セッション復元</li>
+            <li>ファイル操作の進捗、キャンセル、競合解決、履歴</li>
+            <li>Finder互換タグ、バッチ名前変更、ZIP、詳細検索、常設プレビュー</li>
+            <li>外部ドライブ、ネットワーク共有、iCloud Drive</li>
+          </ul>
+
+          <h4>## ライセンス</h4>
+          <pre>Freeware — 個人・商用問わず無料でご利用いただけます。</pre>
+
+          <h4>## 詳細ドキュメント</h4>
+          <pre>各機能の詳細な説明はこちら：
+<a href="https://tkbtk.com/wiki/doku.php?id=tkbplorer" target="_blank" rel="noopener" class="path">https://tkbtk.com/wiki/doku.php?id=tkbplorer</a></pre>
+
+          <h4>## フィードバック</h4>
+          <pre>不具合報告・機能要望は、ページ上部の「Contact」からお送りください。
+個人開発のため、すべてのご連絡への返信や、いただいた要望の実装を保証するものではありません。</pre>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© 2026 TKB Labs — built on macOS, for macOS.</span>
+      <div class="footer-links">
+        <a href="../#apps">Apps</a>
+        <a href="#" data-email-link>Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../contact.js"></script>
+  <script src="../assets/download-counter.js"></script>
+  <script>
+// Minimal scroll-reveal — no libraries, respects reduced motion.
+(function () {
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const targets = document.querySelectorAll('.reveal');
+
+  if (prefersReduced || !('IntersectionObserver' in window)) {
+    targets.forEach((el) => el.classList.add('in'));
+    return;
+  }
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
+
+  targets.forEach((el) => io.observe(el));
+})();
+
+  </script>
+</body>
+</html>
