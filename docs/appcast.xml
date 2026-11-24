@@ -3,6 +3,28 @@
     <channel>
         <title>TKBplorer</title>
         <item>
+            <title>1.1.4</title>
+            <pubDate>Tue, 24 Nov 2026 15:04:59 +0900</pubDate>
+            <link>https://apps.tkbtk.com/TKBplorer/</link>
+            <sparkle:version>42</sparkle:version>
+            <sparkle:shortVersionString>1.1.4</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>26.5</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description><![CDATA[<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8">
+<style>body{font-family:-apple-system,sans-serif;font-size:13px;line-height:1.7;margin:0;padding:4px}h3{font-size:13px;margin:0.8em 0 0.2em}h3:first-child{margin-top:0}ul{padding-left:1.2em;margin:0.2em 0}</style>
+</head><body>
+<h3>追加</h3>
+<ul><li>画像ファイル（JPEG・TIFF・HEIC/HEIF・PNG・BMP）の右クリックメニューに「回転」を追加し、左または右に90度回転できるようにしました。</li><li>「このアプリケーションで開く」に「その他…」を追加し、一覧にないアプリを選んで開けるようにしました。「常にこのアプリケーションで開く」をオンにすると、その種類のファイルの既定のアプリになります。</li></ul>
+<h3>変更</h3>
+<ul><li>「このアプリケーションで開く」で、最近使ったアプリを上に表示するようにしました。設定で名前順（Finderと同じ）に変更できます。</li></ul>
+<h3>修正</h3>
+<ul><li>読み込みマークが出たり消えたりするたびに、検索欄が左右に動いていた問題を修正しました。</li><li>macOS 27で、右クリックメニューのアプリのアイコンやラベルの色が表示されないことがある問題を修正しました。</li></ul>
+</body></html>
+]]></description>
+            <enclosure url="https://github.com/TKBlabs/TKBplorer/releases/download/v1.1.4/TKBplorer_1.1.4.dmg" length="5031941" type="application/octet-stream" sparkle:edSignature="fI6B2H2hs50WYBKPGOsz83DIeyxWuM8L/gsRQQ324myLBvEefyBH/KPV1mmo726nFYZKHZ02mnp/gaFKgvoBBw=="/>
+        </item>
+        <item>
             <title>1.1.3</title>
             <pubDate>Sun, 22 Nov 2026 12:11:20 +0900</pubDate>
             <link>https://apps.tkbtk.com/TKBplorer/</link>
@@ -73,30 +95,6 @@
 </body></html>
 ]]></description>
             <enclosure url="https://github.com/TKBlabs/TKBplorer/releases/download/v1.1.0/TKBplorer_1.1.0.dmg" length="4952248" type="application/octet-stream" sparkle:edSignature="G/5Ti2X+ziZOfHnO/TzQxTIH09kaRSVF8HhPLiFOIl/pm+UjdW/+h1dbAlGscKvIpgC2vbUmz8ywoxU/B0lXAw=="/>
-        </item>
-        <item>
-            <title>1.0.37</title>
-            <pubDate>Thu, 12 Nov 2026 14:44:57 +0900</pubDate>
-            <link>https://tkbtk.com/TKBplorer/</link>
-            <sparkle:version>37</sparkle:version>
-            <sparkle:shortVersionString>1.0.37</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>26.5</sparkle:minimumSystemVersion>
-            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
-            <description><![CDATA[<!DOCTYPE html>
-<html lang="ja"><head><meta charset="utf-8">
-<style>body{font-family:-apple-system,sans-serif;font-size:13px;line-height:1.7;margin:0;padding:4px}ul{padding-left:1.2em;margin:0.4em 0}</style>
-</head><body>
-<ul>
-<li>ネットワーク共有が接続されていないとき、その共有のフォルダだけを開いていたワークスペースへ切り替えられなかった問題を修正しました。見つからない場所のタブもそのまま開いて読み込めないことを表示し、共有を接続してから読み直せます。一部のタブが見つからないまま別のワークスペースへ切り替えると、そのタブが消えてしまう問題も直しました。</li>
-<li>写真アプリから動画をドロップすると、元の動画ではなく縮小版の画像が保存されていた問題を修正しました。</li>
-<li>写真アプリからドロップしたときのファイル名を、設定で「オリジナルのファイル名（IMG_1234）」と「撮影日（YYYYMMDD HHMMSS）」から選べるようにしました。</li>
-<li>サイドバーの「よく使う項目」やお気に入りのフォルダへファイルをドロップして、移動（Optionキーでコピー）できるようにしました。ゴミ箱へドロップするとゴミ箱へ移します。</li>
-<li>分割線のダブルクリックで等分するとき、サイドバーの幅を除いて左右のペインの幅が揃うようにしました。</li>
-<li>「アプリケーション」フォルダ以外から起動したときに、移動を勧めるようにしました。ダウンロードした場所のままでは自動アップデートがうまく動かないことがあるためです。</li>
-</ul>
-</body></html>
-]]></description>
-            <enclosure url="https://github.com/TKBlabs/TKBplorer/releases/download/v1.0.37/TKBplorer_1.0.37.dmg" length="4951816" type="application/octet-stream" sparkle:edSignature="GLjqWyMILJKd+f5es81/RHnV1b3l44/RP4FDe+RMC25rG9NtqRG46xZ4nl2P1fliMeWET/C9xAhJbrnYEcKbDQ=="/>
         </item>
     </channel>
 </rss>
