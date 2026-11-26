@@ -3,6 +3,24 @@
     <channel>
         <title>TKBplorer</title>
         <item>
+            <title>1.1.5</title>
+            <pubDate>Thu, 26 Nov 2026 11:46:00 +0900</pubDate>
+            <link>https://apps.tkbtk.com/TKBplorer/</link>
+            <sparkle:version>43</sparkle:version>
+            <sparkle:shortVersionString>1.1.5</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>26.5</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description><![CDATA[<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8">
+<style>body{font-family:-apple-system,sans-serif;font-size:13px;line-height:1.7;margin:0;padding:4px}h3{font-size:13px;margin:0.8em 0 0.2em}h3:first-child{margin-top:0}ul{padding-left:1.2em;margin:0.2em 0}</style>
+</head><body>
+<h3>追加</h3>
+<ul><li>画像ファイルの右クリックメニューに「回転情報を補正して画像をコピー」を追加しました。写真の向き情報を反映して、見たままの向きの画像をクリップボードに入れます。クイックルックの「画像をコピー」では、逆さまや横向きに撮った写真が向きを無視してコピーされることがあります（macOSの不具合）。</li></ul>
+</body></html>
+]]></description>
+            <enclosure url="https://github.com/TKBlabs/TKBplorer/releases/download/v1.1.5/TKBplorer_1.1.5.dmg" length="5040590" type="application/octet-stream" sparkle:edSignature="q4DZfV7wHfdhv2i3UF9ym3fUN8VvK2JIkezTI8qoD0GcQ+w7lEuqSgU5E1mLwOSuOh58jfzEf2+c1CRHwvscDw=="/>
+        </item>
+        <item>
             <title>1.1.4</title>
             <pubDate>Tue, 24 Nov 2026 15:04:59 +0900</pubDate>
             <link>https://apps.tkbtk.com/TKBplorer/</link>
@@ -77,24 +95,6 @@
 </body></html>
 ]]></description>
             <enclosure url="https://github.com/TKBlabs/TKBplorer/releases/download/v1.1.1/TKBplorer_1.1.1.dmg" length="4952875" type="application/octet-stream" sparkle:edSignature="YFWOgerK3M5TTxf3j2n3XOLEG/VJ5X+1RHl9wYclmsLg3DcB8fsT3oDPKRq+4sNQvOrwhljV2K7q/KK1y692AA=="/>
-        </item>
-        <item>
-            <title>1.1.0</title>
-            <pubDate>Wed, 18 Nov 2026 14:11:15 +0900</pubDate>
-            <link>https://apps.tkbtk.com/TKBplorer/</link>
-            <sparkle:version>38</sparkle:version>
-            <sparkle:shortVersionString>1.1.0</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>26.5</sparkle:minimumSystemVersion>
-            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
-            <description><![CDATA[<!DOCTYPE html>
-<html lang="ja"><head><meta charset="utf-8">
-<style>body{font-family:-apple-system,sans-serif;font-size:13px;line-height:1.7;margin:0;padding:4px}h3{font-size:13px;margin:0.8em 0 0.2em}h3:first-child{margin-top:0}ul{padding-left:1.2em;margin:0.2em 0}</style>
-</head><body>
-<h3>変更</h3>
-<ul><li>配布形式をZIPからDMGに変更しました。DMGを開いて、TKBplorer.appを「アプリケーション」フォルダへドラッグしてください。</li><li>配布元をGitHub（github.com/TKBlabs/TKBplorer）に移し、製品ページを apps.tkbtk.com に移しました。自動アップデートはこれまでどおり使えます。</li></ul>
-</body></html>
-]]></description>
-            <enclosure url="https://github.com/TKBlabs/TKBplorer/releases/download/v1.1.0/TKBplorer_1.1.0.dmg" length="4952248" type="application/octet-stream" sparkle:edSignature="G/5Ti2X+ziZOfHnO/TzQxTIH09kaRSVF8HhPLiFOIl/pm+UjdW/+h1dbAlGscKvIpgC2vbUmz8ywoxU/B0lXAw=="/>
         </item>
     </channel>
 </rss>
