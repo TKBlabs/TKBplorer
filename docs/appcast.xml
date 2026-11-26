@@ -4,7 +4,7 @@
         <title>TKBplorer</title>
         <item>
             <title>1.1.5</title>
-            <pubDate>Thu, 26 Nov 2026 11:46:00 +0900</pubDate>
+            <pubDate>Thu, 26 Nov 2026 12:00:29 +0900</pubDate>
             <link>https://apps.tkbtk.com/TKBplorer/</link>
             <sparkle:version>43</sparkle:version>
             <sparkle:shortVersionString>1.1.5</sparkle:shortVersionString>
@@ -18,7 +18,7 @@
 <ul><li>画像ファイルの右クリックメニューに「回転情報を補正して画像をコピー」を追加しました。写真の向き情報を反映して、見たままの向きの画像をクリップボードに入れます。クイックルックの「画像をコピー」では、逆さまや横向きに撮った写真が向きを無視してコピーされることがあります（macOSの不具合）。</li></ul>
 </body></html>
 ]]></description>
-            <enclosure url="https://github.com/TKBlabs/TKBplorer/releases/download/v1.1.5/TKBplorer_1.1.5.dmg" length="5040590" type="application/octet-stream" sparkle:edSignature="q4DZfV7wHfdhv2i3UF9ym3fUN8VvK2JIkezTI8qoD0GcQ+w7lEuqSgU5E1mLwOSuOh58jfzEf2+c1CRHwvscDw=="/>
+            <enclosure url="https://github.com/TKBlabs/TKBplorer/releases/download/v1.1.5/TKBplorer_1.1.5.dmg" length="5044280" type="application/octet-stream" sparkle:edSignature="EPDKEjOi95yc23DsRWA0yyDpFg+fXY63i6je2fI36uwrQLrgXLtPVt5mixDGoIHIr5L4+oCDDsBU/5R/GWCyDw=="/>
         </item>
         <item>
             <title>1.1.4</title>
