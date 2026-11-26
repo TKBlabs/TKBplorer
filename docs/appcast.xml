@@ -3,6 +3,24 @@
     <channel>
         <title>TKBplorer</title>
         <item>
+            <title>1.1.6</title>
+            <pubDate>Thu, 26 Nov 2026 16:31:48 +0900</pubDate>
+            <link>https://apps.tkbtk.com/TKBplorer/</link>
+            <sparkle:version>44</sparkle:version>
+            <sparkle:shortVersionString>1.1.6</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>26.5</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description><![CDATA[<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8">
+<style>body{font-family:-apple-system,sans-serif;font-size:13px;line-height:1.7;margin:0;padding:4px}h3{font-size:13px;margin:0.8em 0 0.2em}h3:first-child{margin-top:0}ul{padding-left:1.2em;margin:0.2em 0}</style>
+</head><body>
+<h3>追加</h3>
+<ul><li>PNGファイルの右クリックメニューの「変換」から、JPEGに変換できるようにしました。透過部分は白で塗りつぶします。</li><li>画像ファイル（HEIC・HEIF・PNG・JPEG）の「変換」に「1080pに縮小（形式はそのまま）」を追加しました。形式と縦横比を変えずに短辺を1080ピクセルに縮小し、「名前 1080p」として保存します。</li></ul>
+</body></html>
+]]></description>
+            <enclosure url="https://github.com/TKBlabs/TKBplorer/releases/download/v1.1.6/TKBplorer_1.1.6.dmg" length="5051955" type="application/octet-stream" sparkle:edSignature="W8hf8oYJhwp5UxDtK0BnlKftZyP4SOkuf/uihev5DweY8QuyXp3VcQ2tpRCtlGJoLFPVg/LCImrcXoyiqKYiCg=="/>
+        </item>
+        <item>
             <title>1.1.5</title>
             <pubDate>Thu, 26 Nov 2026 12:00:29 +0900</pubDate>
             <link>https://apps.tkbtk.com/TKBplorer/</link>
@@ -77,24 +95,6 @@
 </body></html>
 ]]></description>
             <enclosure url="https://github.com/TKBlabs/TKBplorer/releases/download/v1.1.2/TKBplorer_1.1.2.dmg" length="4956558" type="application/octet-stream" sparkle:edSignature="Cg4dDhSk4IRppYa75J19AE7L4j23PTOf6DmOIeHt62GlPNcwh8GhaTNYkNRyfY8EfTfh5KHb3ROzTnOg8OqiBg=="/>
-        </item>
-        <item>
-            <title>1.1.1</title>
-            <pubDate>Fri, 20 Nov 2026 12:00:23 +0900</pubDate>
-            <link>https://apps.tkbtk.com/TKBplorer/</link>
-            <sparkle:version>39</sparkle:version>
-            <sparkle:shortVersionString>1.1.1</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>26.5</sparkle:minimumSystemVersion>
-            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
-            <description><![CDATA[<!DOCTYPE html>
-<html lang="ja"><head><meta charset="utf-8">
-<style>body{font-family:-apple-system,sans-serif;font-size:13px;line-height:1.7;margin:0;padding:4px}h3{font-size:13px;margin:0.8em 0 0.2em}h3:first-child{margin-top:0}ul{padding-left:1.2em;margin:0.2em 0}</style>
-</head><body>
-<h3>修正</h3>
-<ul><li>OneDriveの更新（26.212）のあと、OneDriveのフォルダの色と共有フォルダ・Shortcutsのマークが表示されず、Mac標準の青いフォルダになっていた問題を修正しました。</li></ul>
-</body></html>
-]]></description>
-            <enclosure url="https://github.com/TKBlabs/TKBplorer/releases/download/v1.1.1/TKBplorer_1.1.1.dmg" length="4952875" type="application/octet-stream" sparkle:edSignature="YFWOgerK3M5TTxf3j2n3XOLEG/VJ5X+1RHl9wYclmsLg3DcB8fsT3oDPKRq+4sNQvOrwhljV2K7q/KK1y692AA=="/>
         </item>
     </channel>
 </rss>
